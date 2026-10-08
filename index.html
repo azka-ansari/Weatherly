@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Forecast App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <span>Weather<span class="logo-highlight">ly</span></span>
+            </div>
+
+            <div class="header-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="headerLocation">Karachi, Pakistan</span>
+            </div>
+        </header>
+
+
+        <!-- SEARCH -->
+        <section class="search-section">
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                >
+
+                <button id="searchBtn">
+                    Search
+                </button>
+            </div>
+
+            <button class="location-btn" id="locationBtn">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                My Location
+            </button>
+
+        </section>
+
+
+        <!-- MAIN WEATHER -->
+        <main>
+
+            <section class="main-grid">
+
+                <!-- CURRENT WEATHER -->
+                <div class="weather-card current-card">
+
+                    <div class="weather-top">
+
+                        <div>
+                            <p class="small-title">CURRENT WEATHER</p>
+
+                            <h1 id="cityName">
+                                Karachi
+                            </h1>
+
+                            <p id="date">
+                                Loading...
+                            </p>
+                        </div>
+
+                        <div class="weather-icon">
+                            <img
+                                id="weatherIcon"
+                                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                                alt="Weather"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="temperature">
+
+                        <span id="temperature">
+                            --°
+                        </span>
+
+                        <div class="condition">
+                            <h3 id="condition">
+                                Loading...
+                            </h3>
+
+                            <p>
+                                Feels like
+                                <span id="feelsLike">--°</span>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="weather-details">
+
+                        <div class="detail">
+                            <i class="fa-solid fa-droplet"></i>
+
+                            <div>
+                                <span>Humidity</span>
+                                <strong id="humidity">--%</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="detail">
+                            <i class="fa-solid fa-wind"></i>
+
+                            <div>
+                                <span>Wind</span>
+                                <strong id="wind">-- km/h</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="detail">
+                            <i class="fa-solid fa-eye"></i>
+
+                            <div>
+                                <span>Visibility</span>
+                                <strong id="visibility">-- km</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="detail">
+                            <i class="fa-solid fa-gauge-high"></i>
+
+                            <div>
+                                <span>Pressure</span>
+                                <strong id="pressure">-- mb</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TODAY SUMMARY -->
+                <div class="weather-card summary-card">
+
+                    <div class="card-heading">
+                        <h2>Today's Summary</h2>
+
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+
+
+                    <div class="summary-item">
+                        <span>Feels Like</span>
+                        <strong id="summaryFeels">--°</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Wind Direction</span>
+                        <strong id="windDirection">--</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>UV Index</span>
+                        <strong id="uv">--</strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Cloud Coverage</span>
+                        <strong id="cloud">--%</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FORECAST -->
+            <section class="forecast-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="small-title">WEATHER FORECAST</p>
+                        <h2>5-Day Forecast</h2>
+                    </div>
+
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+
+                <div class="forecast-container" id="forecastContainer">
+
+                    <!-- JS will generate forecast cards -->
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- LOADING -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Getting weather...</p>
+        </div>
+
+
+        <!-- ERROR -->
+        <div class="error-message" id="errorMessage">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="errorText">Something went wrong.</span>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>
+                Weatherly &copy; 2026
+            </p>
+
+            <p>
+                Powered by WeatherAPI.com
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
